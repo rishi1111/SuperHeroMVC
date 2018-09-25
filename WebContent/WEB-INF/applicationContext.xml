@@ -7,14 +7,14 @@
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:tx="http://www.springframework.org/schema/tx">
 
-	<context:component-scan base-package="" />
+	<context:component-scan base-package="lti.quiz.repo,lti.quiz.service" />
 
 	<bean id="ds"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="username" value="" />
-		<property name="password" value="" />
+		<property name="username" value="rishi" />
+		<property name="password" value="compaq" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -29,7 +29,10 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value></value>
+				<value>lti.quiz.entity.User</value>
+				<value>lti.quiz.entity.Quiz</value>
+				<value>lti.quiz.entity.Answer</value>
+
 			</list>
 		</property>
 	</bean>
